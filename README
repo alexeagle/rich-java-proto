@@ -1,0 +1,5 @@
+If you use Protocol Buffers in Java, you've used the API exposed by the generated Java classes that represent your data model.
+
+And chances are good that you've wanted to add additional behavior to those classes, like simple synthetic properties based on the fields defined in your .proto file, like User#isAwesome().
+
+Putting this code in a helper class, with static methods or delegating to an instance of the proto, is a reasonable solution, but it can get annoying. This library attempts to find your helper code and inline it into the generated code produced by protoc.

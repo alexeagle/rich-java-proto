@@ -1,4 +1,4 @@
-package com.google.protobuf.java.example;
+package example;
 
 /**
  * @author: alexeagle@google.com (Alex Eagle)

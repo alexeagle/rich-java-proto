@@ -37,7 +37,7 @@ public class IntegrationTest extends TestCase {
 
   public void testShouldAugmentJavaProto() throws Exception {
     writeToFile(srcProto,
-        "package com.google.testing;\n" +
+        "package example;\n" +
         "message User {\n" +
         "  required string name = 1;\n" +
         "}");
@@ -55,7 +55,7 @@ public class IntegrationTest extends TestCase {
       fail(String.format("protoc returned %d\n%s", exitCode,
           readAll(new InputStreamReader(process.getInputStream()))));
     }
-    File generatedJava = new File(filesystem, "src/com/google/testing/Sample.java");
+    File generatedJava = new File(filesystem, "src/example/Sample.java");
     assertTrue("Java file should be created", generatedJava.exists());
     assertTrue("Method should be inlined",
         readAll(new FileReader(generatedJava)).contains("IsAwesome"));

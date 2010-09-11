@@ -5,7 +5,7 @@ import google.protobuf.compiler.Plugin.CodeGeneratorResponse.File;
 import google.protobuf.compiler.Plugin.CodeGeneratorResponse.File.Builder;
 
 /**
- * @author: alexeagle@google.com (Alex Eagle)
+ * @author alexeagle@google.com (Alex Eagle)
  */
 public class FileFactory {
   public Builder createBuilder(FileDescriptorProto fileDescriptorProto) {

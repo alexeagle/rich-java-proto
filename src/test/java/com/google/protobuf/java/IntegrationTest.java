@@ -9,7 +9,7 @@ import java.io.*;
 import static java.io.File.separator;
 
 /**
- * @author: alexeagle@google.com (Alex Eagle)
+ * @author alexeagle@google.com (Alex Eagle)
  */
 public class IntegrationTest extends TestCase {
   File filesystem;
@@ -21,7 +21,7 @@ public class IntegrationTest extends TestCase {
     super.setUp();
     filesystem = new File(System.getProperty("java.io.tmpdir")
         + separator + getName());
-    new File(filesystem, "src/com/google/testing").mkdirs();
+    new File(filesystem, "src/example").mkdirs();
     srcProto = new File(filesystem, "src/sample.proto");
     pluginExecutable = new File(filesystem, "protoc-gen-richjava");
     pluginExecutable.createNewFile();
@@ -40,6 +40,18 @@ public class IntegrationTest extends TestCase {
         "package example;\n" +
         "message User {\n" +
         "  required string name = 1;\n" +
+        "}");
+
+    writeToFile(new File(filesystem, "src/example/UserHelper.java"),
+        "package example;" +
+        "public class UserHelper {\n" +
+        "  private final User delegate;\n" +
+        "  public UserHelper(User delegate) {\n" +
+        "    this.delegate = delegate;\n" +
+        "  }\n" +
+        "  public boolean IsAwesome() {\n" +
+        "    return delegate.getName().equals(\"Alex\");\n" +
+        "  }" +
         "}");
 
     Process process = new ProcessBuilder(

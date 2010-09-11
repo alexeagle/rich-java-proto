@@ -6,7 +6,7 @@ import google.protobuf.compiler.Plugin.CodeGeneratorResponse.File.Builder;
 import junit.framework.TestCase;
 
 /**
- * @author: alexeagle@google.com (Alex Eagle)
+ * @author alexeagle@google.com (Alex Eagle)
  */
 public class FileFactoryTest extends TestCase {
   public void testShouldUsePackageNameAndProtoFileNameToGuessJavaOutputPath() {

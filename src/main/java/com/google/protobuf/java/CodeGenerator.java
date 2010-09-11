@@ -15,7 +15,7 @@ import japa.parser.ast.visitor.VoidVisitorAdapter;
 import java.util.List;
 
 /**
- * @author: alexeagle@google.com (Alex Eagle)
+ * @author alexeagle@google.com (Alex Eagle)
  */
 public class CodeGenerator {
   private final JavaSources javaSourceFiles;

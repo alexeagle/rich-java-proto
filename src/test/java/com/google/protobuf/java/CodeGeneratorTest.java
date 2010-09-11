@@ -1,11 +1,9 @@
 package com.google.protobuf.java;
 
 import com.google.protobuf.DescriptorProtos.DescriptorProto;
-import com.google.protobuf.DescriptorProtos.FieldDescriptorProto;
 import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
 import google.protobuf.compiler.Plugin.CodeGeneratorRequest;
 import google.protobuf.compiler.Plugin.CodeGeneratorResponse;
-import google.protobuf.compiler.Plugin.CodeGeneratorResponse.Builder;
 import google.protobuf.compiler.Plugin.CodeGeneratorResponse.File;
 import japa.parser.JavaParser;
 import japa.parser.ast.CompilationUnit;
@@ -17,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author: alexeagle@google.com (Alex Eagle)
+ * @author alexeagle@google.com (Alex Eagle)
  */
 public class CodeGeneratorTest extends TestCase {
   public void testInsertsHelperMethods() throws Exception {
@@ -54,6 +52,7 @@ public class CodeGeneratorTest extends TestCase {
     private final List<CompilationUnit> compilationUnits;
 
     public FakeJavaSources(CompilationUnit... compilationUnits) {
+      super(new java.io.File(""));
       this.compilationUnits = Arrays.asList(compilationUnits);
     }
 

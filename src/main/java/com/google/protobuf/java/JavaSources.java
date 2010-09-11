@@ -9,11 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: alexeagle@google.com (Alex Eagle)
+ * @author alexeagle@google.com (Alex Eagle)
  */
 public class JavaSources {
-  //TODO: haw to find the sources?
-  private File srcDir = new File("/Users/alexeagle/Projects/richjavaproto/src/main/java");
+  private final File srcDir;
+
+  public JavaSources(File srcDir) {
+    this.srcDir = srcDir;
+  }
 
   public List<CompilationUnit> list() {
     List<File> recursiveListing = new ArrayList<File>();
